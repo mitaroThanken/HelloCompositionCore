@@ -29,7 +29,6 @@ namespace HelloCompositionCore
         {
             InitializeComponent();
             Loaded += CompositionHostControl_Loaded;
-            compositionHost.DpiChanged += CompositionHost_DpiChanged;
         }
 
         private void CompositionHost_DpiChanged(object sender, DpiChangedEventArgs e)
@@ -64,6 +63,7 @@ namespace HelloCompositionCore
                 compositor = compositionHost.Compositor;
                 containerVisual = compositor.CreateContainerVisual();
                 compositionHost.Child = containerVisual;
+                compositionHost.DpiChanged += CompositionHost_DpiChanged;
             }
         }
         // Add
