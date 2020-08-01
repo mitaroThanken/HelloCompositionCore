@@ -5,8 +5,28 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HelloCompositionCore"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="600" Width="840">
     <Grid>
-
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="210"/>
+            <ColumnDefinition Width="600"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="46"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Button Content="Add composition element" Click="Button_Click"
+        Grid.Row="1" Margin="12,0"
+        VerticalAlignment="Top" Height="40"/>
+        <TextBlock Text="Composition content" FontSize="20"
+           Grid.Column="1" Margin="0,12,0,4"
+           HorizontalAlignment="Center"/>
+        <local:CompositionHostControl x:Name="CompositionHostControl1"
+                              Grid.Row="1" Grid.Column="1"
+                              VerticalAlignment="Top"
+                              Width="600" Height="500"
+                              BorderBrush="LightGray"
+                              BorderThickness="3"/>
     </Grid>
 </Window>
